@@ -19,3 +19,36 @@ Note:
 -----
 Any documentation which cannot be made public available on github it will be placed at the
 [Sherlock one drive's tool and data integration directory](https://nlesc.sharepoint.com/sites/sherlock/Shared%20Documents/papers/tool%20and%20data%20integration).
+
+
+Steps taken:
+------------
+
+* Day 1: Define our strategy and work plan for our 3 days session. As first step our group did an installation
+of Docker and Hadoop single node cluster on different operating systems such as Ubuntu and Fedora. Information
+about Docker and Hadoop as well as installation instruction can be found at:....
+
+With everything up and running we created a docker image and deploy it on each machine. Examples on how to run
+a docker image can be found:.
+
+The second step consisted in making all the files stored in HDFS accessible as POSIX. For that we considered
+two options, FUSE and NFS, where the HDFS will be mounted as a directory to be provided as input to the Docker instance.
+Fuse does not seem to be the way to go. NFS seems to be easy to setup and use most of the time. Niels succeeded
+in getting is up and running.
+
+* Day 2: Now that each Docker instance as a view on all the HDFS data, it is necessary to exploit data locality.
+Since the tools to be developed during Sherlock project are to be used at the end of the Hansken pipeline, the
+input is a set of files. Hence, a possible solution would be to define a list of files, which are local, to be
+consumed by the Docker instance. Such list of files could be extracted from the Traces created in Hansken on
+each iteration. 
+
+With further analyzes of the Hansken pipeline it was concluded such approach requires a specialized scheduler.
+A scheduler which interprets the traces, identifies the blockIDs for which the Trace belongs to advise Hadoop where
+to execute the Docker Instance.
+
+Hence, it was decided to move up for a more generic solution which would exploit Hadoop internals, its balance
+scheduling and fault-tolerance, to execute Docker instances over data stored in HDFS. As first step towards that
+goal we decided to implement a Map-Docker function.
+
+
+
