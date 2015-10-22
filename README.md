@@ -48,7 +48,18 @@ to execute the Docker Instance.
 
 Hence, it was decided to move up for a more generic solution which would exploit Hadoop internals, its balance
 scheduling and fault-tolerance, to execute Docker instances over data stored in HDFS. As first step towards that
-goal we decided to implement a Map-Docker function.
+goal we decided to implement a Map-Docker function. Such function will run a simple Docker instance using a Java
+"System call".
 
+* Day 3: With a docker instance running inside a Mapper, the next step is to define different strategies to
+provide input data and collect the output data. The first option is to use the stdin and stdout using the Hadoop
+streaming API as in this example to run a [Python code](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
 
+The second option is to explore the Docker Java API to implement more advanced options to load input data and
+output the results, but also to start and stop a docker instance. The [docker-java wiki](https://github.com/docker-java/docker-java/wiki)
+contains several examples, for example how to
+[create new docker container and start it with mount binded volumes](https://github.com/docker-java/docker-java/wiki#create-new-docker-container-and-start-it-with-mount-binded-volumes).
+
+To cope with the different challenges of each group a set of templates will be defined with each of them
+using its gitHub repository.
 
