@@ -11,7 +11,7 @@ automating workflows, Docker enables apps to be quickly assembled from component
 eliminates the friction between development, QA, and production environments.”, [www.docker.com](www.docker.com/]https://www.docker.com/).
 For more information how how virtualization works and how docker differs from virtual machines check
 [link](http://cloudanddevopswf.com/files/9851-Managing_Applications_in_Docker_Containers.pdf) and its [user guide](https://docs.docker.com/userguide/).
-
+More info is available at the [Docker workshop gitHub](https://github.com/mkuzak/shipcamel).
 
 Docker and Yarn
 ---------------
@@ -26,3 +26,4 @@ NodeManager – although the YARN container must define all the environments and
 will be shared with the NodeManager.
 
 In this blog post you can find an example on how to [build an Yarn cluster using Docker.io containers](http://lresende.blogspot.nl/2015/01/building-yarn-cluster-using-dockerio.html).
+
