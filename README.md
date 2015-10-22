@@ -60,6 +60,5 @@ output the results, but also to start and stop a docker instance. The [docker-ja
 contains several examples, for example how to
 [create new docker container and start it with mount binded volumes](https://github.com/docker-java/docker-java/wiki#create-new-docker-container-and-start-it-with-mount-binded-volumes).
 
-To cope with the different challenges of each group a set of templates will be defined with each of them
-using its gitHub repository.
+To cope with the different challenges of each group a set of templates: [hadoop-streaming-docker](https://github.com/nlesc-sherlock/hadoop-streaming-docker).
 
