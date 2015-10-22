@@ -1,0 +1,6 @@
+hadoop_2 : https://www.packtpub.com/sites/default/files/Article-Images/5471OS_01_02.png
+hadoop-native-applications: http://www.kdnuggets.com/wp-content/uploads/hadoop-native-applications.jpg
+Yarn-services-Apis: http://hortonworks.com/wp-content/uploads/2014/05/YARN-Services-APIs.png
+hadoop-1-to-2: https://jaxenter.com/wp-content/uploads/2013/10/1-to-2.png
+docker-orig: https://developer.ibm.com/bluemix/wp-content/uploads/sites/20/2015/04/docker-100275159-orig.jpg
+hansken-rijkshuisstijl: http://www.atnfi.nl/binaries/articlelead/content/gallery/artikelafbeeldingen/hansken-rijkshuisstijl.jpg
