@@ -60,3 +60,4 @@ contains several examples, for example how to
 [create new docker container and start it with mount binded volumes](https://github.com/docker-java/docker-java/wiki#create-new-docker-container-and-start-it-with-mount-binded-volumes).
 To cope with the different challenges of each group we created a set of templates: [hadoop-streaming-docker](https://github.com/nlesc-sherlock/hadoop-streaming-docker).
 
+All the points discussed above are covered in the ![Sherlock architecture](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/diagrams/architecture/architecture.png).
