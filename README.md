@@ -53,7 +53,10 @@ goal we decided to implement a Map-Docker function. Such function will run a sim
 
 * Day 3: With a docker instance running inside a Mapper, the next step is to define different strategies to
 provide input data and collect the output data. The first option is to use the stdin and stdout using the Hadoop
-streaming API as in this example to run a [Python code](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
+streaming API as in this example to run [Python code](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/).
+Hence, the first step is to execute Python code to test the Hadoop streaming while the second one is to execute
+the python code inside a Docker container. The docker will be instantiated using a shell script.
+
 
 The second option is to explore the Docker Java API to implement more advanced options to load input data and
 output the results, but also to start and stop a docker instance. The [docker-java wiki](https://github.com/docker-java/docker-java/wiki)
