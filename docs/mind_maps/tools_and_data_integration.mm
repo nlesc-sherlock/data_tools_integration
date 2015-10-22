@@ -49,7 +49,8 @@
 <node CREATED="1445343927801" ID="ID_1299372690" LINK="http://blog.sequenceiq.com/blog/2014/06/19/multinode-hadoop-cluster-on-docker/" MODIFIED="1445343954353" TEXT="Create multi-node Hadoop cluster"/>
 </node>
 <node CREATED="1445344102215" ID="ID_1069275412" LINK="http://blog.cloudera.com/blog/2014/01/how-to-create-a-simple-hadoop-cluster-with-virtualbox/" MODIFIED="1445344126494" POSITION="right" TEXT="Create an HDFS cluster using virtualbox"/>
-<node CREATED="1445421048849" ID="ID_853132950" MODIFIED="1445421064283" POSITION="left" TEXT="Progress">
+<node CREATED="1445521520921" ID="ID_648138317" MODIFIED="1445521543687" POSITION="left" TEXT="Progress">
+<node CREATED="1445421048849" ID="ID_853132950" MODIFIED="1445521535784" TEXT="Day 2">
 <node CREATED="1445421065915" ID="ID_591816585" MODIFIED="1445421076114" TEXT="Set up Hadoop cluster on DAS"/>
 <node CREATED="1445421076539" ID="ID_1529137533" MODIFIED="1445421084720" TEXT="Use a multi-node hadoop cluster"/>
 <node CREATED="1445421086002" ID="ID_616635191" MODIFIED="1445421119240" TEXT="First goal is to run a docker container inside a mapper"/>
@@ -69,7 +70,11 @@
 <node CREATED="1445421908533" ID="ID_425947420" MODIFIED="1445421923554" TEXT="A second challenge is run a docker in a reducer."/>
 <node CREATED="1445421924598" ID="ID_1857626574" MODIFIED="1445421986272" TEXT="Further developement will require us to run a docker using Yarn. the docker will have to be scheduled"/>
 </node>
-<node CREATED="1445424384363" ID="ID_1878347339" MODIFIED="1445424387967" POSITION="left" TEXT="Ambari">
+<node CREATED="1445521548922" ID="ID_1117581161" MODIFIED="1445521551110" TEXT="Day 3">
+<node CREATED="1445521553708" ID="ID_1353799118" MODIFIED="1445521553708" TEXT=""/>
+</node>
+</node>
+<node CREATED="1445424384363" ID="ID_1878347339" MODIFIED="1445424387967" POSITION="right" TEXT="Ambari">
 <node CREATED="1445424419826" ID="ID_1656253933" MODIFIED="1445424421338" TEXT="The Apache Ambari project is aimed at making Hadoop management simpler by developing software for provisioning, managing, and monitoring Apache Hadoop clusters. Ambari provides an intuitive, easy-to-use Hadoop management web UI backed by its RESTful APIs."/>
 </node>
 </node>
