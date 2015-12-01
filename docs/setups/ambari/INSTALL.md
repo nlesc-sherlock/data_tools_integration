@@ -50,3 +50,11 @@ Route traffic between nodes via internal network by adding `<internal ip> <fqdn>
     * `sudo -u hdfs hdfs dfs -mkdir /user/sherlock`
     * `sudo -u hdfs hdfs dfs -chown sherlock /user/sherlock`
 3. User can perform hdfs/mapred/spark on any node with the clients installed.
+
+## Allow yarn to run docker containers
+
+On all workers do
+```
+adduser yarn docker
+```
+Restart yarn/mapred2/hdfs so the shell scripts executed by a user is a member of the docker group.
