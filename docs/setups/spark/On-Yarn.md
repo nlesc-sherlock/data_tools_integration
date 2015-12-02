@@ -50,6 +50,7 @@ spark.eventLog.dir hdfs:///user/spark/applicationHistory
 4. Run a spark job
 5. Start history server to look at it
 ```
+export SPARK_HISTORY_OPTS='-Dspark.history.fs.logDirectory=hdfs:///user/spark/applicationHistory'
 sbin/start-history-server.sh
 ```
 
