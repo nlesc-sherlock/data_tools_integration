@@ -10,8 +10,37 @@
 cp -rH /etc/hadoop/conf hadoop-conf
 perl -pi -e 's/\${hdp.version}/2.3.2.0-2950/g' hadoop-conf/*
 export YARN_CONF_DIR=$PWD/hadoop-conf
+
+Option 2:
+Use Ambari to:
+Download YARN-CONFIG.tar
+Download HDFS-CONFIG.tar
+
+Copy the content of both into <app_dir_path>/yarn-conf
+Then you should comment out JAVA_HOME from hdfs-env.sh and yarn-env.sh.
+
+export YARN_CONF_DIR=<path>/spark-lda/yarn-conf
 ```
+##It is required to add the following to spark-defaults.conf which is under spark-1.5.2-bin-hadoop2.6/config
+```
+spark.driver.extraJavaOptions -Dhdp.version=2.3.2.0-2950
+spark.yarn.am.extraJavaOptions -Dhdp.version=2.3.2.0-2950
+spark.eventLog.enabled           true
+spark.eventLog.dir hdfs:///user/spark/applicationHistory
+```
+## Access the HDFS cluster
+```
+download hadoop bin tar file version [2.7.1](http://apache.cs.uu.nl/hadoop/common/hadoop-2.7.1/)
+```
+
+Test it by:
+```
+./bin/hdfs --config $YARN_CONF_DIR dfs -ls /user/sherlock/
+```
+
 ## Run an example
+Since YARN_CONF_DIR is set spark shell will interact with YARN cluster directly.
+
 ```
 MASTER=yarn-cluster bin/run-example SparkPi
 ```
