@@ -30,9 +30,7 @@ spark.eventLog.enabled           true
 spark.eventLog.dir hdfs:///user/spark/applicationHistory
 ```
 ## Access the HDFS cluster
-```
 download hadoop bin tar file version [2.7.1](http://apache.cs.uu.nl/hadoop/common/hadoop-2.7.1/)
-```
 
 To test it you should do:
 ```
