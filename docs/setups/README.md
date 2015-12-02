@@ -18,4 +18,4 @@ and [Job Execution](http://www.cs.vu.nl/das4/jobs.shtml) to learn how to submit 
 * SURFsara Hadoop cluster: once you have an account, get your Linux/Mac machine ready to
 [access the cluster and submit jobs](https://userinfo.surfsara.nl/systems/hadoop/usage). Note, if you
 only have an windows machine we advise you to install a virtual machine with linux (Ubuntu is recommended).
-* To use the Spark cluster it is required to create home directory and Postfix user. The steps to on how to do it are described under [ambari add user](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/ambari/INSTALL.md#add-user).
+* To use the Spark cluster it is required to create a home directory and a Postfix user. The steps on how to do it are described in [ambari add user section](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/ambari/INSTALL.md#add-user).
