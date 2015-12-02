@@ -21,7 +21,8 @@ Then you should comment out JAVA_HOME from hdfs-env.sh and yarn-env.sh.
 
 export YARN_CONF_DIR=<path>/spark-lda/yarn-conf
 ```
-##It is required to add the following to spark-defaults.conf which is under spark-1.5.2-bin-hadoop2.6/config
+7. It is required to add the following to spark-defaults.conf which is under spark-1.5.2-bin-hadoop2.6/config
+
 ```
 spark.driver.extraJavaOptions -Dhdp.version=2.3.2.0-2950
 spark.yarn.am.extraJavaOptions -Dhdp.version=2.3.2.0-2950
@@ -33,7 +34,7 @@ spark.eventLog.dir hdfs:///user/spark/applicationHistory
 download hadoop bin tar file version [2.7.1](http://apache.cs.uu.nl/hadoop/common/hadoop-2.7.1/)
 ```
 
-Test it by:
+To test it you should do:
 ```
 ./bin/hdfs --config $YARN_CONF_DIR dfs -ls /user/sherlock/
 ```
