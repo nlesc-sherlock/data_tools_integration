@@ -45,7 +45,7 @@ MASTER=yarn-cluster bin/run-example SparkPi
 ```
 or
 ```
-bin/spark-submit --master yarn-cluster --class com.apache.spark.examples.SparkPi lib/spark-examples-1.5.2-hadoop2.6.0.jar
+bin/spark-submit --master yarn-cluster --class org.apache.spark.examples.SparkPi lib/spark-examples-1.5.2-hadoop2.6.0.jar
 ```
 Goto application url -> logs -> stdout for result
 
@@ -56,7 +56,7 @@ MASTER=yarn-cluster bin/run-example mllib.LDAExample gutenberg/pg4300.txt
 
 # Using spark installed with ambari
 ```
-spark-submit --master yarn-cluster --class com.apache.spark.examples.SparkPi /usr/hdp/current/spark-client/lib/spark-examples-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar
+spark-submit --master yarn-cluster --class org.apache.spark.examples.SparkPi /usr/hdp/current/spark-client/lib/spark-examples-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar
 ```
 
 # Show results in history server
