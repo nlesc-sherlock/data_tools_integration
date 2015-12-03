@@ -58,3 +58,24 @@ On all workers do
 adduser yarn docker
 ```
 Restart yarn/mapred2/hdfs so the shell scripts executed by a user is a member of the docker group.
+
+# Ansible
+
+To make changes to all workers use ansible http://www.ansible.com/.
+
+Add private key for root@worker-machine to ~/.ssh/id_rsa.
+
+Install it by
+```
+sudo apt-get install python-pip python-dev markupsafe
+sudo pip install ansible
+```
+Create `/etc/ansible/hosts` file with
+```
+[workers]
+<hostnames of workers>
+```
+Run command on all workers with
+```
+ansible all -u root -a 'docker pull nlesc/imagenet1000'
+```
