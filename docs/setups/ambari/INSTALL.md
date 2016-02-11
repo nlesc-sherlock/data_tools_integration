@@ -109,3 +109,20 @@ ansible all -u root -a 'apt-get install ambari-metrics-assembly'
 # restart non metrics
 ```
 
+## Upgrade HDP from 2.3.2 to 2.3.4
+
+Follow http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_upgrading_Ambari/content/_upgrading_hdp_stack.html
+
+1. Skip Checkpoint hdfs, we don't have an HA setup
+2. Register 2.3.4 urls from http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_Installing_HDP_AMB/content/_hdp_stack_repositories.html
+3. Stop yarn 
+4. Perform upgrade
+
+5 of 6 hdfs datanodes did not restart, ignoring.
+Completion stuck on datanodes, decommisioned, stopped and if needed deleted them.
+After finalize node 2..6 where made hdfs datanodes again.
+Deleted hdfs datanode from 4 and 5
+
+
+
+ 
