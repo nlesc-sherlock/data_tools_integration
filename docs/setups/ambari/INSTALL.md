@@ -79,3 +79,33 @@ Run command on all workers with
 ```
 ansible all -u root -a 'docker pull nlesc/imagenet1000'
 ```
+
+# Upgrade from 2.1.2 to 2.2.0
+
+Follow instructions at http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_upgrading_Ambari/content/_ambari_upgrade_guide.html
+
+```
+mkdir 2.2.1-backup
+cp /etc/ambari-server/conf/ambari.properties .
+sudo -u postgres pg_dumpall -f /tmp/pg-11022016.dump
+mv /tmp/pg-11022016.dump .
+# stop metrics
+ambari-server stop
+ansible all -u root -a 'ambari-agent stop'
+wget -nv http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.2.0.0/ambari.list -O /etc/apt/sources.list.d/ambari.list
+apt-get clean all
+apt-get update 
+apt-cache show ambari-server | grep Version
+apt-get install ambari-server
+ansible all -u root -a 'wget -nv http://public-repo-1.hortonworks.com/ambari/ubuntu14/2.x/updates/2.2.0.0/ambari.list -O /etc/apt/sources.list.d/ambari.list'
+ansible all -u root -a 'apt-get update'
+ansible all -u root -a 'apt-get install ambari-agent'
+ansible all -u root -a 'apt-cache show ambari-agent'
+ambari-server upgrade
+ambari-server start
+ansible all -u root -a 'ambari-agent start'
+ansible all -u root -a 'apt-get install ambari-metrics-assembly'
+# start metrics
+# restart non metrics
+```
+
