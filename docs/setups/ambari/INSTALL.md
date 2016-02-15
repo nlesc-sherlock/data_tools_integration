@@ -125,6 +125,7 @@ Deleted hdfs datanode from 4 and 5
 
 # Add Hive
 
-Added hive serviceso it can be used from spark.
+Added Hive service for usage in Spark.
+
 
  
