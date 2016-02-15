@@ -123,6 +123,8 @@ Completion stuck on datanodes, decommisioned, stopped and if needed deleted them
 After finalize node 2..6 where made hdfs datanodes again.
 Deleted hdfs datanode from 4 and 5
 
+# Add Hive
 
+Added hive serviceso it can be used from spark.
 
  
