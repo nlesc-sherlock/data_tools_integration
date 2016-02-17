@@ -34,6 +34,14 @@ See also the discussion on the following pages:
 <http://www.inquidia.com/news-and-info/hadoop-file-formats-its-not-just-csv-anymore>
 <http://www.slideshare.net/StampedeCon/choosing-an-hdfs-data-storage-format-avro-vs-parquet-and-more-stampedecon-2015>
 
+This link provides an indepth discussion on data practices, considering other aspects than performance and filesize
+<http://www.confluent.io/blog/stream-data-platform-2/>
+
+and some more blogposts
+<http://grepalex.com/2014/05/13/parquet-file-format-and-object-model/>
+<http://blog.cloudera.com/blog/2015/03/converting-apache-avro-data-to-parquet-format-in-apache-hadoop/>
+<http://ms-olap.blogspot.nl/2015/02/hive-file-format-comparison.html>
+<https://www.mapr.com/blog/what-kind-hive-table-best-your-data#.VefqGWxSukq>
 
 
 Binary data
