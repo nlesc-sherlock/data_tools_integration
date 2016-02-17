@@ -3,11 +3,12 @@ DataIn
 Created Tuesday 16 February 2016
 
 Here we will shortly discuss how to get data into HDFS.
-To get the most out of HDFS, you need to store your data in a format that is a 'Resilient Distributed Datasets' or RDD: This will allow you to use all features like data locality, job scheduling etc. An RDD consists of a set of records with, depending on the format, extensible metadata. A RDD is split or joined along the records for processing on the hadoop cluster. This means that when storing your data in hadoop, you should be careful with the file format.
+To get the most out of HDFS, you need to store your data in a format that is a 'Resilient Distributed Dataset' or RDD: This will allow you to use all features like data locality, job scheduling etc. An RDD consists of a set of records with, depending on the format, extensible metadata. A RDD is split or joined along the records for processing on the hadoop cluster. This means that when storing your data in hadoop, you should be careful with the file format.
 
 Text Data
 ---------
-For text data, JSON and XML like formats cannot be split at arbitrary places (ie. you need the opening, <record>, and closing, </record>, tags for XML to stay valid. CSV or record JSON, where each line of the file is an independent record, is highly recommended. 
+For text data, JSON and XML like formats cannot be split at arbitrary places (ie. you need the pair of opening and closing tags for XML to stay valid).
+CSV or record JSON, where each line of the file is an independent record, is highly recommended. 
 
 General text data can also be converted to a number of binary formats:
 
@@ -16,8 +17,7 @@ General text data can also be converted to a number of binary formats:
 * Parquet
 * Sequence files
 
-such a binary file can hold multiple records, which facilitates dealing with large datasets, and some formats allow you to apply compression.
-
+A binary file can hold multiple records, which facilitates dealing with large datasets, and some formats allow you to apply compression.
 Other considerations are:
 
 * amount of metadata
@@ -31,7 +31,7 @@ AVRO and sequence files are easiest to work with, have native Hadoop support, an
 ORC seems to become the default format, but support and tooling is still immature.
 
 See also the discussion on the following pages: 
-[h](http://www.inquidia.com/news-and-info/hadoop-file-formats-its-not-just-csv-anymore)<ttp://www.inquidia.com/news-and-info/hadoop-file-formats-its-not-just-csv-anymore>
+<http://www.inquidia.com/news-and-info/hadoop-file-formats-its-not-just-csv-anymore>
 <http://www.slideshare.net/StampedeCon/choosing-an-hdfs-data-storage-format-avro-vs-parquet-and-more-stampedecon-2015>
 
 
@@ -75,7 +75,6 @@ normal files ↔ Sequence file
 <http://avro.apache.org/>
 Hadoop native support: java and python bindings
 
-
 * Row based, not optimized for statistics / aggregates over the metadata
 * Only fixed-size binary blobs
 
@@ -89,10 +88,10 @@ Apache Avro™ is a data serialization system, providing:
 * A container file, to store persistent data.
 * Remote procedure call (RPC).
 * Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.
-* Python: avro, avroknife (pip)
+* From Python: avro, avroknife (pip)
 
 
-
+A short example of using AVRO in spark:
 <http://stackoverflow.com/questions/23944615/how-can-i-load-avros-in-spark-using-the-schema-on-board-the-avro-files>
 
 
