@@ -8,7 +8,7 @@ To get the most out of HDFS, you need to store your data in a format that is a '
 Text Data
 ---------
 For text data, JSON and XML like formats cannot be split at arbitrary places (ie. you need the pair of opening and closing tags for XML to stay valid).
-CSV or record JSON, where each line of the file is an independent record, is highly recommended. 
+CSV or record JSON, where each line of the file is an independent record, is highly recommended.
 
 General text data can also be converted to a number of binary formats:
 
@@ -30,7 +30,7 @@ Other considerations are:
 AVRO and sequence files are easiest to work with, have native Hadoop support, and usable command line tools exist. The are not a column store, so performance is slightly lower than the other formats.
 ORC seems to become the default format, but support and tooling is still immature.
 
-See also the discussion on the following pages: 
+See also the discussion on the following pages:
 <http://www.inquidia.com/news-and-info/hadoop-file-formats-its-not-just-csv-anymore>
 <http://www.slideshare.net/StampedeCon/choosing-an-hdfs-data-storage-format-avro-vs-parquet-and-more-stampedecon-2015>
 
@@ -98,9 +98,20 @@ Apache Avro™ is a data serialization system, providing:
 * Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.
 * From Python: avro, avroknife (pip)
 
+##### Avro in spark
+Install the avro spark package https://github.com/databricks/spark-avro
+This can be done automagically like:
 
-A short example of using AVRO in spark:
-<http://stackoverflow.com/questions/23944615/how-can-i-load-avros-in-spark-using-the-schema-on-board-the-avro-files>
+Python:
+
+    pyspark --packages com.databricks:spark-avro_2.10:2.0.1
+    $ df = sqlContext.read.format("com.databricks.spark.avro").load("src/test/resources/episodes.avro")
+
+Scala:
+
+    spark-shell --packages com.databricks:spark-avro_2.10:2.0.1
+    $ import com.databricks.spark.avro._
+    $ val df = sqlContext.read.avro("src/test/resources/episodes.avro")
 
 
 #### Apache orc
@@ -111,7 +122,7 @@ License: Apache v2.0
 ORC: optimized row columnar
 can add user metadata per file
 
-ORC is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. Predicate pushdown uses those indexes to determine which stripes in a file need to be read for a particular query and the row indexes can narrow the search to a particular set of 10,000 rows. ORC supports the complete set of types in Hive, including the complex types: structs, 
+ORC is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written. Predicate pushdown uses those indexes to determine which stripes in a file need to be read for a particular query and the row indexes can narrow the search to a particular set of 10,000 rows. ORC supports the complete set of types in Hive, including the complex types: structs,
 
 
 ### Apache Parquet
@@ -122,5 +133,3 @@ License: Apache v2.0
 Columnar storage format
 
 Apache Parquet is a columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
-
-
