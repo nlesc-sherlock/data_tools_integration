@@ -10,6 +10,8 @@ This is the generic model we use for the analytics done. Not all the work done i
 
 by Elena
 
+![Deep Learning](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/technical_overview/deep-learning.svg)
+
 The deep learning team is creating and using (deep) neural networks for classification of images. This is a two step process. First, a neural network is learned from labeled images.
 
 Next, this network is used to classify images. Learning takes considerable computational effort and thus requires a GPU. Classification of a single image can be done on a normal machine, but classifying large amounts of images does benefit from a GPU.
