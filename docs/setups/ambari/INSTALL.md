@@ -25,3 +25,7 @@ On the HPC cloud of SurfSARA create the following Virtual machines:
 # Provision
 
 Used https://github.com/nlesc-sherlock/shelly to provision cluster.
+
+# Blueprint
+
+The cluster configuration was saved in a blueprint called [shelly-blueprint.json](shelly-blueprint.json).
