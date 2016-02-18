@@ -16,14 +16,13 @@ More info is available at the [Docker workshop gitHub](https://github.com/mkuzak
 Docker and Yarn
 ---------------
 
-To use Yarn to run Docker containers it is recomended to use [Docker Container Executor](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/DockerContainerExecutor.html).
-The Docker Container Executor (DCE) allows the YARN NodeManager to launch YARN containers into Docker containers. Users
-can specify the Docker images they want for their YARN containers. These containers provide a custom software environment
-in which the user’s code runs, isolated from the software environment of the NodeManager. These containers can include
-special libraries needed by the application, and they can have different versions of Perl, Python, and even Java than what
-is installed on the NodeManager. Indeed, these containers can run a different flavor of Linux than what is running on the
-NodeManager – although the YARN container must define all the environments and libraries needed to run the job, nothing
-will be shared with the NodeManager.
+Yarn executes its Mapper, Reducer, and ApplicationMaster in its own container environment.
+The [Docker Container Executor (DCE)](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/DockerContainerExecutor.html) allows the YARN NodeManager to launch YARN containers into Docker containers.
+Users can specify the Docker images they want for their YARN containers.
+These containers provide a custom software environment in which the user’s code runs, isolated from the software environment of the NodeManager.
+These containers can include special libraries needed by the application, and they can have different versions of Perl, Python, and even Java than what is installed on the NodeManager.
+Indeed, these containers can run a different flavor of Linux than what is running on the NodeManager – although the YARN container must define all the environments and libraries needed to run the job, nothing will be shared with the NodeManager.
 
 In this blog post you can find an example on how to [build an Yarn cluster using Docker.io containers](http://lresende.blogspot.nl/2015/01/building-yarn-cluster-using-dockerio.html).
 
+To run an arbitrary docker container as part of a Spark job see [this project](https://github.com/nlesc-sherlock/spark-docker).
