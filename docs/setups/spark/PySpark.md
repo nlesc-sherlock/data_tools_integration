@@ -12,9 +12,11 @@ ipython profile create pyspark
 
 2. To avoid port conflicts with other IPython profiles you should update the default port within ~/.ipython/profile_pyspark/ipython_notebook_config.py:
 
+```
 # Simply find this line and change the port value (value below is an example)
 c = get_config()
 c.NotebookApp.port = 42424
+```
 
 3. PySpark environment
 
