@@ -19,11 +19,6 @@ df <- orc2dataframe(url='hdfs:///user/shelly/labels.orc', hdfsConfigurationFile 
 
 1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
 
-2. RStudio configuration
-
-
-The information above was extracted from the following [post](http://www.r-bloggers.com/sparkr-with-rstudio-in-ubuntu-12-04/), and tested by the TDI team.
-
 ##Stabilish connection with Spark
 ```
 library("rJava")
@@ -39,3 +34,6 @@ p = collect(people)
 #To plot the dataframe then do:
 ggplot(p, aes(name)) + geom_bar(aes(weight=age))
 ```
+
+The information above was extracted from the following [post](http://www.r-bloggers.com/sparkr-with-rstudio-in-ubuntu-12-04/), and tested by the TDI team.
+
