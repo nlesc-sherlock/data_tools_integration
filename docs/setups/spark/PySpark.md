@@ -1,6 +1,3 @@
-PySpark
-=======
-
 #Installing Spark
 1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
 
