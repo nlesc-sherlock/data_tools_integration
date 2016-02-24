@@ -1,0 +1,52 @@
+\section{Future work}
+
+----Towards Generating ETL Processes for Incremental Loading---
+We presented an approach for generating
+incremental load
+processes
+for  data  warehouse  refreshment  from
+declarative
+schema mappings
+.  The basis of our work has been provided
+by Orchid, a prototype system developed at IBM Almaden
+Research Center, that translates
+schema mappings
+into ETL
+processes and vice versa.  Orchid-generated ETL processes,
+however,  are  limited  to
+initial  load  scenarios
+,  i.e.  source
+data  is  exhaustively  extracted  and  the  warehouse  is  com-
+109
+pletely  (re)built.   Incremental  load  processes,  in  contrast,
+propagate changes from the sources to the data warehouse.
+This approach has clear performance benefits.  Change Data
+Capture (CDC) and Change Data Application (CDA) tech-
+niques  are  used  to  capture  changes  at  the  sources  and  re-
+fresh the data warehouse, respectively.  We defined a model
+for
+change  data
+to  characterize  both,  the  output  of  CDC
+techniques  and  the  input  of  CDA  techniques.   Since  CDC
+techniques may su from limitations we introduced a no-
+tion of
+partial  change  data
+.  We discussed the propagation
+of  partial  change  data  within  incremental  load  processes.
+Our  approach  allows  for  reasoning  on  how  limitations  of
+CDC techniques determine the set of applicable CDA tech-
+niques.  That is, it allows inferring satisticable CDA reuire-
+ments from given CDC limitations and, the other way round,
+acceptable CDC limitations from given CDA requirements.
+We further, demonstrated the exploitation of properties of
+data sources (such as schema constraints) to reduce the com-
+plexity  of  incremental  load  processes.   By  leveraging  Or-
+chid's  deployment  facilities,  we  are  able  to  generate  exe-
+cutable  ETL  processes.   We  are  confident  that  our  work
+contributes to the improvement of ETL development 
+
+
+
+
+\section{Summary}
+\label{summary}

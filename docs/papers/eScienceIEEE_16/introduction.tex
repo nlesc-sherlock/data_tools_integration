@@ -1,0 +1,26 @@
+\section{Introduction}
+\label{introduction}
+
+The tools and data integration work of Sherlock project aims to provide easy and efficient data injection
+into a HDFS cluster, batch processing, interactive processing and export of results to external processing
+or storage systems. The decision to use HDFS as a data hub is due to its utilization in Hansken, NFI system
+for forensic research, but also to exploit current state-of-the-art solutions for Big Data exploration such
+as Spark. The diagram in Figure 2 shows how each component is interlinked with a Hadoop 2.0 cluster. It has
+a data import docker to convert different file types to the most appropriated file format supported by Hadoop.
+
+The choice of its format is based on the type of processing with the aim to improve processing efficiency
+and have a low storage footprint. To exploit data locality and fault-tolerance on a Hadoop Cluster, external
+libraries are dockerized and through MRdocker, it instantiates a docker image in the Map phase of a MapReduce
+job, or SprDocker, it instantiates a docker image on each data node, are executed. The input, the intermediate,
+or the final result is made accessible through the Scala, the R, and the Python interfaces of Spark for a
+step-wise forensic exploration. Such interfaces allow the users to develop web-apps using R-shiny, or Python
+fask to feed Java Script web-pages. It provides a user-friendly visualization with all the heavy computations
+being done by Spark. In case the user wants to process intermediate results somewhere else, a bridge through
+a NFS mount or through a specialized data exporter is provided by our solution. For example, it allows the
+data to be loaded into external database for later re-use or be consumed by an external data visualization
+tool running in a docker. 
+
+The remainder of the paper is as follows. Section~\ref{current_approaches} discusses the general
+architecture. In Section~\ref{data_exploration}, through different use case scenarios, flexibility
+and efficiency on exploring climate and geo-spatial data is shown. Finally the article ends with
+a summary in Section~\ref{conclusion} and future plans in Section~\ref{future_plans}.
