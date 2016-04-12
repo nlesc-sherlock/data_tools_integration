@@ -1,0 +1,57 @@
+\section{Architecture}
+\label{architecture}
+
+Types of scheduling.
+
+We first use Spark since data is stored in HDFS.
+So spark is used to exploit data locality and fault-tolerance.
+
+
+We schedule different docker containers through spark.
+How to connect them using Spark?
+
+Then how other scheduling schemas can be integrated?
+
+Different types of schedulers:
+https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-scheduling-and-orchestration
+
+https://docs.docker.com/swarm/scheduler/filter/
+
+Data locality could be questioned and then by using swarm filters we could schedule dockers to
+specific locations, however, the scheduling algorithm would be of our responsability.
+
+Keubernet, Spark and Zepplin
+
+http://blog.kubernetes.io/2016/03/using-Spark-and-Zeppelin-to-process-Big-Data-on-Kubernetes.html
+
+
+How to do it for HDFS cluster, we run docker containers in Spark.
+
+Outside HDFS cluster we use keubernet to schedule docker containers over each node.
+A spark cluster can be created, but also a set of containers running othere tools.
+Using messos for resource management, several processing tools can co-exist at the same time.
+
+The challenge becomes to access heterogenous data and find a common ground to share data.
+The idea is to exploit data vaults when using a DBMS or Spark. Specialized libraries work
+with a single data format. They are used often in data preparation phase where classificaiton happens.
+
+Data vaults is not only about importing data, it is also about exporting data.
+
+We are inverting the paradigm with this platform, it is not a DBMS on top of Spark or Hadoop, but both co-exist side by side
+where the query plan abstraction goes on level up. With this query interaction is more user friendly, instead of gathering
+information we are now extracting knowledge.
+
+When using HDFS, better to use Spark because data locality comes for free.
+
+Using Kubernet it is the first step towards running Spark with access to external file repositories.
+For that we will use and extend the latest API released:
+
+In Spark 1.2, we’ve taken the next step to allow Spark to integrate natively with a far larger number of input sources.  These new integrations are made possible through the inclusion of the new Spark SQL Data Sources API.
+https://databricks.com/blog/2015/01/09/spark-sql-data-sources-api-unified-data-access-for-the-spark-platform.html
+
+Comparisson between Mesos and Keubernet, fantastic list of differences and why we will pick Keubernet.
+http://thenewstack.io/a-brief-comparison-of-mesos-and-kubernetes/
+
+
+Tricks on how to run spark within containers and be scheduled by Keubernet:
+http://www.lshift.net/blog/2015/04/30/swarming-spark/
