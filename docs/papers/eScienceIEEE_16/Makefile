@@ -4,8 +4,8 @@ all: escience.pdf
 
 escience.pdf: escience.tex *.tex
 	pdflatex $<
-	#bibtex  escience
-	#perl -i -p -e 's|^(\\begin{thebibliography}{.*})$$|$$1\n\n'$(REFSIZE)'|' escience.bbl
+	bibtex  escience
+	perl -i -p -e 's|^(\\begin{thebibliography}{.*})$$|$$1\n\n'$(REFSIZE)'|' escience.bbl
 	pdflatex $<
 	pdflatex $<
 	#pdflatex $<
@@ -27,5 +27,6 @@ ieee: escience.tex *.tex
 	rm escience.blg escience.bbl 
 
 clean:
-	rm escience.pdf escience.ps escience.dvi 
 	rm escience.aux escience.log escience.blg escience.bbl 
+	rm escience.pdf 
+	rm escience.ps escience.dvi 
