@@ -44,12 +44,14 @@ The information above was extracted from the following [post](http://ramhiser.co
 
 1. It is also possible to launch PySpark in IPython, the enhanced Python interpreter. To do this, set the IPYTHON variable to 1 when running pyspark:
 ```
-$ IPYTHON=1 ./pyspark
+cd <spark_home>/bin
+IPYTHON=1 ./pyspark
 ```
 
 2. Alternatively, you can customize the ipython command by setting IPYTHON_OPTS. For example, to launch the IPython Notebook with PyLab graphing support:
 ```
-$ IPYTHON_OPTS="notebook --pylab inline" ./pyspark
+cd <spark_home>/bin
+IPYTHON_OPTS="notebook --pylab inline" ./pyspark
 ```
 
 The information above was extracted from the following [post](https://spark.apache.org/docs/0.8.1/python-programming-guide.html), and tested by the TDI team.
