@@ -1,0 +1,66 @@
+%\documentclass[11pt,a4paper]{article}
+%\documentclass[conference]{IEEEtran}
+%\documentclass[5pt,conference,letterpaper]{IEEEtran}
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage[hyphens]{url}
+% uncomment according to your operating system:
+% ------------------------------------------------
+%\usepackage[latin1]{inputenc}    %% European characters can be used (Windows, old Linux)
+\usepackage[utf8]{inputenc}     %% European characters can be used (Linux)
+%\usepackage[applemac]{inputenc} %% European characters can be used (Mac OS)
+% ------------------------------------------------
+\usepackage[T1]{fontenc}   %% get hyphenation and accented letters right
+\usepackage{mathptmx}      %% use fitting times fonts also in formulas
+% do not change these lines:
+\pagestyle{empty}                %% no page numbers!
+%\usepackage[left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot]{geometry}
+\usepackage{subfig}
+\usepackage{multiFloats}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{authblk}
+\usepackage{todonotes}
+\usepackage{float}
+
+\renewcommand\Authfont{\small}
+%\renewcommand\Affilfont{\itshape\footnotesize}
+
+\IEEEoverridecommandlockouts
+%\makeatother
+% begin the document
+\begin{document}
+%\thispagestyle{empty}
+%\sloppy
+
+\title{\textbf{Tools and data integration for eScience platforms}}
+\author[1]{Romulo Goncalves}
+\author[1]{Niels Drost}
+\author[1]{Stefan Verhoeven}
+\author[1]{Jisk Attema}
+\author[1]{Jason Maassen}
+
+\affil[1]{NLeSC Amsterdam, The Netherlands \vspace{1pt} \{\emph{\{r.goncalves,n.drost,s.verhoeven,j.attema,j.maassen\}@esciencecenter.nl}\}}%, o.rubi\}@esciencecenter.nl}\}}
+
+
+\date{} % <--- leave date empty
+\maketitle\thispagestyle{empty} %% <-- you need this for the first page
+
+\begin{abstract}
+\end{abstract}
+
+\input{introduction.tex}
+\input{background.tex}
+\input{architecture.tex}
+\input{orchestration.tex}
+\input{experiments.tex}
+\input{future_work.tex}
+\input{summary.tex}
+
+{%\footnotesize
+\bibliographystyle{abbrv}
+\bibliography{references}
+}
+
+\end{document}

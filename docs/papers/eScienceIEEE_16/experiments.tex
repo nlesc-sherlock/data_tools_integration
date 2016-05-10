@@ -1,0 +1,40 @@
+\section{System in Action}
+\label{system_in_action}
+
+
+\subsection{Deep Learning}
+The Convolutional Neural Networks (CNN) are a type of deep learning networks, Y. Bengio, "Learning deep
+architechures for AI". CNNs are a family of multi-layer neural networks particularly designed for use
+on two-dimensional data, such as images. For a quick introduction to CNNs, please refer to section 2.3
+of the “Large-scale Computer Vision” overview. For a more elaborate introduction, please refer to the
+online book “Neural Networks and Deep Learning” and to the vast resources on deeplearning.net.
+Sherlock
+
+Image classification in forensics is a very common request by the digital forensic investigators. 
+
+\subsection{Analyzing document corpora}
+While searching a device for incriminating evidence, text documents are commonly encountered. Analyzing the
+content of such documents is a challenging task which would require investigators to read through large volumes
+of text, without any information to guide them through the search. What is this document about? How does it
+relate to other documents? Are there any trends amongst them? Do I need to read through this pile of documents?
+Or could I spot a particular document which is more interesting than the rest?
+
+We will tackle these problems using natural language processing tools. The aim of this group is to use NLP
+tools to group documents with similar content and provide investigators with the tools to quickly gain insight
+into large collections of text.
+
+In the field of Natural Language Processing (NLP), topic modeling has become a popular technique for analyzing
+large sets of documents. Topic models attempt to infer a set of topics (basically, bags of words) and then
+identify the probability of a topic being contained in a document (e.g. Document1 is made up of 0.5 * Football
+topic + 0.2 * General sports topic + 0.3 * Drugs and crime topic).
+
+However there are still many open questions when using topic modeling: document pre-processing, optimum number
+of topics to use, visualization and interpretation of the results, etc.
+
+One focus are is investigating techniques for visualizing results from topic models in the most useful and
+meaningful way. The ultimate aim is to be able to take a list set of documents (e.g. emails from an inbox)
+and cluster them into different groups of similar emails (e.g. emails work, family, leisure). To achieve this
+we will need to use existing natural language processing technique, investigate suitable similarity metrics
+between documents, and develop (interactive?) visualization techniques.
+
+We will be using the infamous Enron email data set as our document collection.

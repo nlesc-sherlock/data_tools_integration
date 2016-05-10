@@ -4,11 +4,16 @@ In the Sherlock project several teams are working on projects related to / inspi
 
 ## General overview
 
+![General Overview](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/technical_overview/general-overview.png)
+
+
 This is the generic model we use for the analytics done. Not all the work done in Sherlock will fit exactly, but it does cover most usages.
 
 ## Deep Learning
 
 by Elena
+
+![Deep Learning](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/technical_overview/deep-learning.png)
 
 The deep learning team is creating and using (deep) neural networks for classification of images. This is a two step process. First, a neural network is learned from labeled images.
 

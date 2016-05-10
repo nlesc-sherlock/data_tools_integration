@@ -1,0 +1,32 @@
+\section{Orchestration}
+\label{orchestration}
+
+We first use Spark since data is stored in HDFS.
+So spark is used to exploit data locality and fault-tolerance.
+Currently TDI team is working on the integration of other team’s tools using spark\_docker into a concise
+workflow. For efficient resource utilization, efficient scheduling while co-existing with other applications
+running on the same cluster, TDI team is looking at Mesos and Kubernete. Furthermore, for flexible heterogeneous
+data integration and the use of external tables as input data is other direction under consideration where
+the data injection stands on the same principles as our internal Data Vaults project.
+
+The map of such workflow into the required resources should be delegated to an outside
+systems with a complete overview of the existent ecosystem.
+
+We schedule different docker containers through spark.
+How to connect them using Spark?
+
+Then how other scheduling schemas can be integrated?
+
+Different types of schedulers:
+%https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-scheduling-and-orchestration
+
+%https://docs.docker.com/swarm/scheduler/filter/
+
+Data locality could be questioned and then by using swarm filters we could schedule dockers to
+specific locations, however, the scheduling algorithm would be of our responsability.
+
+Keubernet, Spark and Zepplin
+%http://blog.kubernetes.io/2016/03/using-Spark-and-Zeppelin-to-process-Big-Data-on-Kubernetes.html
+
+Comparisson between Mesos and Keubernet, fantastic list of differences and why we will pick Keubernet.
+%http://thenewstack.io/a-brief-comparison-of-mesos-and-kubernetes/

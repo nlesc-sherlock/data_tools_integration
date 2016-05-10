@@ -1,27 +1,26 @@
-R-dataconnector from Vertica allows us to read ORCfiles from HDFS. To do that follow the instructions at:
+#RSpark
 
-https://github.com/vertica/r-dataconnector
+## R-dataconnector from Vertica allows us to read ORCfiles from HDFS.
 
-1) To make a connection with HDFS at the Yarn cluster, first get the HDFS binary and add the HDFS configurations.
+1. Follow the instructions to install and configure Spark (standalone or cluster mode).
 
-2) Add hdfs.json to where the R package was installed or just give the path, examples following:
+2. Follow the instructions at [R-Dataconnector GitHub](https://github.com/vertica/r-dataconnector) to install R-dataconnector.
 
+3. To stabilish the connection with the Spark running at the Yarn cluster use [hdfs.json]. 
+
+```
 library(dataconnector)
-
-df <- orc2dataframe(url='hdfs:///user/shelly/labels.orc', hdfsConfigurationFile = paste(system.file(package = "dataconnector"), "/conf/hdfs.json", sep = ""))
-
 df <- orc2dataframe(url='hdfs:///user/shelly/labels.orc', hdfsConfigurationFile = '/home/romulo/sandbox/r-dataconnector/conf/hdfs.json')
 
-df <- orc2dataframe(url='hdfs:///user/shelly/labels.orc')
+#NOTE: It is only able to read pure ORCFiles. To read it as DataFrame HiveSQL from Spark is required.
+```
 
-json file is in gitHub.
+##SparkR working on your Rstudio
 
-NOTE: It is only able to read pure ORCFiles, not the directory where they are saved. Such directory is only possible with HiveSql context in Spark. For that we should get the spark-binary, copy the configs for spark to the conf directory (note: do not forget to comment out the JAVA_HOME path).
+1. The instructions to downaload and install Spark for standalone and cluster mode are [here](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/spark/On-Yarn.md):
 
-Then follow the following steps to get the SparkR working on your Rstudio:
-http://www.r-bloggers.com/sparkr-with-rstudio-in-ubuntu-12-04/
-
-To get HiveSQL context you need to:
+##Stabilish connection with Spark
+```
 library("rJava")
 library(SparkR, lib.loc="/home/romulo/sandbox/spark-1.6.0-bin-hadoop2.6/R/lib")
 sc <- sparkR.init(sparkHome = "/home/romulo/sandbox/spark-1.6.0-bin-hadoop2.6")
@@ -29,13 +28,12 @@ sc <- sparkR.init(sparkHome = "/home/romulo/sandbox/spark-1.6.0-bin-hadoop2.6")
 hiveContext <- sparkRHive.init(jsc = NULL)
 people <- read.df(hiveContext, "/user/shelly/persons.orc", "orc")
 
-Before you plot you need to do a collect, otherwise, it complains is not able to process 
+#Before you plot you need to do a collect, otherwise, it complains is not able to process 
+p = collect(people)
 
-To plot the dataframe then do:
+#To plot the dataframe then do:
 ggplot(p, aes(name)) + geom_bar(aes(weight=age))
+```
 
-sqlContext <- sparkRSQL.init(sc)
-people <- read.df(sqlContext, "/home/shelly/people.orc", "orc")
-
-
+The information above was extracted from the following [post](http://www.r-bloggers.com/sparkr-with-rstudio-in-ubuntu-12-04/), and tested by the TDI team.
 
