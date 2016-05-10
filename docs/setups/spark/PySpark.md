@@ -7,7 +7,7 @@ See https://github.com/jupyter/docker-stacks/tree/master/pyspark-notebook
 Goto http://localhost:8888
 
 #Installing Spark
-1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
+1. The instructions to downaload and install Spark for standalone and cluster mode are [here](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/spark/On-Yarn.md):
 
 
 #IPython configuration
