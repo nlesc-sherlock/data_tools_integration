@@ -1,10 +1,20 @@
 # Using docker
 
+
 See https://github.com/jupyter/docker-stacks/tree/master/pyspark-notebook
 
-  docker run -d -p 8888:8888 jupyter/pyspark-notebook
+```
+docker run -d -p 8888:8888 jupyter/pyspark-notebook
+```
 
-Goto http://localhost:8888
+1. Goto http://localhost:8888
+2. Create a New notebook
+3. Create spark context with
+
+```
+import pyspark
+sc = pyspark.SparkContext()
+```
 
 #Installing Spark
 1. The instructions to downaload and install Spark for standalone and cluster mode are [here](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/spark/On-Yarn.md):
