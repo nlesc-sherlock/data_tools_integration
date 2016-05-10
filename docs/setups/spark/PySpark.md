@@ -1,3 +1,11 @@
+# Using docker
+
+See https://github.com/jupyter/docker-stacks/tree/master/pyspark-notebook
+
+  docker run -d -p 8888:8888 jupyter/pyspark-notebook
+
+Goto http://localhost:8888
+
 #Installing Spark
 1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
 
