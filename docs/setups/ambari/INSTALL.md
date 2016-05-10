@@ -19,7 +19,7 @@ On the HPC cloud of SurfSARA create the following Virtual machines:
 
 3. Instantiate
 
-    * VM Name = shelly%1
+    * VM Name = shelly%i
     * Number of instances = 7
 
 # Provision
