@@ -25,3 +25,20 @@ On the HPC cloud of SurfSARA create the following Virtual machines:
 # Provision
 
 Used https://github.com/nlesc-sherlock/shelly to provision cluster.
+
+# Deploy registry server
+
+See https://docs.docker.com/registry/deploying/
+
+Start it
+```
+docker -H <swarm-mananger>:4000 run -d -p 5000:5000 --restart=always --name registry registry:2
+```
+
+Push to it
+```
+docker tag spark-flask <swarm-node>:5000/spark-flask
+docker push <swarm-node>:5000/spark-flask
+```
+
+Does not work, tls errors
