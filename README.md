@@ -20,4 +20,19 @@ Note:
 Any documentation which cannot be made public available on github it will be placed at the
 [Sherlock one drive's tool and data integration directory](https://nlesc.sharepoint.com/sites/sherlock/Shared%20Documents/papers/tool%20and%20data%20integration).
 
+Related Repositories
+---------------------
+[shelly](https://github.com/nlesc-sherlock/shelly) : Create hadoop/spark cluster using Ambari and Docker swarm with Ansible
+
+[uplift](https://github.com/nlesc-sherlock/uplift) : Web Application to upload/ingest files into hdfs
+
+[hdfs-dfs-client-docker](https://github.com/nlesc-sherlock/hdfs-dfs-client-docker) :  Docker-based tool capable of interacting with a remote hdfs filesystem
+
+[hadoop-streaming-docker](https://github.com/nlesc-sherlock/hadoop-streaming-docker) : Hadoop streaming python inside docker
+
+[yarn-docker](https://github.com/nlesc-sherlock/yarn-docker) : Yarn applications running docker containers
+
+[spark-docker](https://github.com/nlesc-sherlock/spark-docker) : Running docker containers inside Spark.
+
+[spark-flask](https://github.com/nlesc-sherlock/spark-flask) : Webservice which runs sparksql queries in a docker container.
 
