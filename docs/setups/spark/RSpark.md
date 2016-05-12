@@ -17,7 +17,7 @@ df <- orc2dataframe(url='hdfs:///user/shelly/labels.orc', hdfsConfigurationFile 
 
 ##SparkR working on your Rstudio
 
-1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
+1. The instructions to downaload and install Spark for standalone and cluster mode are [here](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/spark/On-Yarn.md):
 
 ##Stabilish connection with Spark
 ```

@@ -7,7 +7,7 @@
 5. Set `JAVA_HOME`, `export JAVA_HOME=/usr/jdk64/jdk1.8.0_40`
 6. Make spark yarn aware by setting `YARN_CONF_DIR`
 
-Option 1:
+## Option 1:
 
 ```
 cp -rH /etc/hadoop/conf hadoop-conf
@@ -16,7 +16,8 @@ export YARN_CONF_DIR=$PWD/hadoop-conf
 ```
 
 
-Option 2:
+## Option 2:
+
 Only available on som OSes, see <https://ambari.apache.org/>).
 
 a. Use Ambari to download `YARN-CONFIG.tar` and `HDFS-CONFIG.tar`.
@@ -37,8 +38,28 @@ spark.eventLog.enabled           true
 spark.eventLog.dir hdfs:///user/spark/applicationHistory
 ```
 
+## Option 3: Use Ambari cluster remote
 
-## Access the HDFS cluster
+1. Download hdfs/yarn/spark config tarballs from Ambari Admin Dashboard.
+2. In config files comment out JAVA_HOME
+3. To spark-defaults.conf add (Check Ambari dashboard for correct hdp version)
+
+```
+spark.driver.extraJavaOptions -Dhdp.version=2.4.2.0-258
+spark.yarn.am.extraJavaOptions -Dhdp.version=2.4.2.0-258
+```
+4. Remove *topo* section from core-site.xml.
+5. Make spark-submit use config files by following enviroment keys (assumes /app/conf contains all config files)
+
+```
+export HADOOP_CONF_DIR=/app/conf
+export YARN_CONF_DIR=/app/conf
+export SPARK_CONF_DIR=/app/conf
+```
+6. Download + untar spark with hadoop tarballs
+7. Use the `spark-submit`from the spark tarball to submit jobs.
+
+# Access the HDFS cluster
 download hadoop bin tar file version [2.7.1](http://apache.cs.uu.nl/hadoop/common/hadoop-2.7.1/)
 
 To test it you should do:
@@ -90,4 +111,3 @@ spark.eventLog.dir hdfs:///user/spark/applicationHistory
 export SPARK_HISTORY_OPTS='-Dspark.history.fs.logDirectory=hdfs:///user/spark/applicationHistory'
 sbin/start-history-server.sh
 ```
-

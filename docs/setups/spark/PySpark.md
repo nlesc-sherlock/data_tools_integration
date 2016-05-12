@@ -1,5 +1,23 @@
+# Using docker
+
+
+See https://github.com/jupyter/docker-stacks/tree/master/pyspark-notebook
+
+```
+docker run -d -p 8888:8888 jupyter/pyspark-notebook
+```
+
+1. Goto http://localhost:8888
+2. Create a New notebook
+3. Create spark context with
+
+```
+import pyspark
+sc = pyspark.SparkContext()
+```
+
 #Installing Spark
-1. The instructions to downaload and install Spark, for standalone and cluster mode, are (here):
+1. The instructions to downaload and install Spark for standalone and cluster mode are [here](https://github.com/nlesc-sherlock/data_tools_integration/blob/master/docs/setups/spark/On-Yarn.md):
 
 
 #IPython configuration
@@ -44,12 +62,14 @@ The information above was extracted from the following [post](http://ramhiser.co
 
 1. It is also possible to launch PySpark in IPython, the enhanced Python interpreter. To do this, set the IPYTHON variable to 1 when running pyspark:
 ```
-$ IPYTHON=1 ./pyspark
+cd <spark_home>/bin
+IPYTHON=1 ./pyspark
 ```
 
 2. Alternatively, you can customize the ipython command by setting IPYTHON_OPTS. For example, to launch the IPython Notebook with PyLab graphing support:
 ```
-$ IPYTHON_OPTS="notebook --pylab inline" ./pyspark
+cd <spark_home>/bin
+IPYTHON_OPTS="notebook --pylab inline" ./pyspark
 ```
 
 The information above was extracted from the following [post](https://spark.apache.org/docs/0.8.1/python-programming-guide.html), and tested by the TDI team.
