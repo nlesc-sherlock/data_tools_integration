@@ -25,3 +25,7 @@
 
 #Assistance
 . In case you have any question about the above requirements please submit an issue on our GitHub page.
+. We will do our best to have one member of our team available during your sprint session.
+
+#Support to our team
+. During our sprint, to be scheduled after all other teams sprints, we might require some support from you in case things do not run as expected. Please make sure a member of your team, with necessary knowledge to deploy your systems, is present at NLeSC. At most, it will be like 1 to 2 hours of support.
