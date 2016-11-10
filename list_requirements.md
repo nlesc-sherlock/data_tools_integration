@@ -21,4 +21,7 @@
 #Spark
 1. All the necessary jars should be made available on your GitHub under the directory data_tools_integration/Spark.
 2. The job submission should be done through a command line call so we can automatize it.
-3. Also provide a description of the input data and its location, and the expected output. 
+3. Also provide a description of the input data and its location, and the expected output. Please try to follow our recommendations on how to load data into the Spark cluster and store results from Spark jobs.
+
+#Assistance
+. In case you have any question about the above requirements please submit an issue on our GitHub page.
